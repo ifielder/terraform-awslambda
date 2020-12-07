@@ -3,5 +3,5 @@ coverage
 .eslintcache
 lib
 dist
-.terraform/
-*.tfstate*
+dist.zip
+infrastructure/.terraform/

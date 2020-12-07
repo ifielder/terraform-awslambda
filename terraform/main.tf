@@ -9,7 +9,6 @@ terraform {
 
 
 provider "aws" {
-
   region = "us-east-1"
 }
 
@@ -34,14 +33,14 @@ EOF
 }
 
 resource "aws_iam_role_policy_attachment" "terraform_lambda_policy" {
-  role       = aws_iam_role.terraform_function_role.name
+  role       = aws_iam_role.iam_for_lambda.name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
 
 
 resource "aws_lambda_function" "example" {
   function_name = "example-tf-from-actions"
-  handler       = "index.handler"
+  handler       = "dist/index.handler"
   runtime       = "nodejs12.x"
   filename      = "dist.zip"
   role          = aws_iam_role.iam_for_lambda.arn
