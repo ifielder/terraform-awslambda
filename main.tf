@@ -9,12 +9,12 @@ terraform {
 
 
 provider "aws" {
-  profile = "sliceabread"
-  region  = "us-east-1"
+
+  region = "us-east-1"
 }
 
 resource "aws_iam_role" "iam_for_lambda" {
-  name = "iam_for_lambda"
+  name = "iam_for_lambda_assume_role"
 
   assume_role_policy = <<EOF
 {
@@ -38,4 +38,5 @@ resource "aws_lambda_function" "example" {
   handler       = "index.handler"
   runtime       = "nodejs12.x"
   filename      = "dist.zip"
+  role          = aws_iam_role.iam_for_lambda.arn
 }
