@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "zip":" npx bestzip dist.zip dist"
+    "zip": " npx bestzip dist.zip dist"
   },
   "keywords": [],
   "author": "",
