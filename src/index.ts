@@ -1,5 +1,7 @@
-export const handler = async (event: any) => {
-  console.log(JSON.stringify(event));
+import cuid from "cuid";
 
-  return "function success";
+export const handler = async (event: any) => {
+  console.log(cuid());
+  console.log(JSON.stringify(event));
+  return "success";
 };
