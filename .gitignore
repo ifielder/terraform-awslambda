@@ -3,5 +3,5 @@ coverage
 .eslintcache
 lib
 dist
-dist.zip
+*.zip
 terraform/.terraform/
