@@ -4,4 +4,4 @@ coverage
 lib
 dist
 dist.zip
-infrastructure/.terraform/
+terraform/.terraform/
