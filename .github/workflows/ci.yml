@@ -3,7 +3,7 @@ name: CI tests
 on:
   push:
     branches:
-      - "**"
+      - '**'
 
 jobs:
   build:
@@ -45,7 +45,7 @@ jobs:
 
       - name: Terraform fmt
         id: fmt
-        run: cd .. && ls -la
+        run: terraform fmt -check
 
         working-directory: ./terraform
 
